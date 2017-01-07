@@ -1,6 +1,33 @@
 const readline = require('readline');
 
 //
+//	Over-right the function to fix a problem within Readline.
+//
+//	Find out more here
+//		http://stackoverflow.com/q/41314556/1049894
+//
+readline.Interface.prototype._insertString = function(c) {
+
+	if (this.cursor < this.line.length)
+	{
+		var beg = this.line.slice(0, this.cursor);
+		var end = this.line.slice(this.cursor, this.line.length);
+
+		this.line = beg + c + end;
+		this.cursor += c.length;
+		this._refreshLine();
+	}
+	else
+	{
+		this.line += c;
+		this.cursor += c.length;
+		this.output.write(c);
+		this._moveCursor(0);
+	}
+
+};
+
+//
 //	Set the direction of the cursor
 //
 let dirrection_y = true;
@@ -127,5 +154,5 @@ function draw()
 		//
 		draw();
 
-	}, 100)
+	}, 5)
 }
