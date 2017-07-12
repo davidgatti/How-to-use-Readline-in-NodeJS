@@ -1,3 +1,5 @@
+# The Basic
+
 The goal of this first code example is to show in the simples way possible how to draw on the screen. And when you run this example the cursors will start do move from the top down, and at each new position it will draw a square ASCII character. Once it reaches the bottom, it will move to the next column and repeat the process until the whole screen is filled with squares.
 
 The important things to not about the code is the following:

@@ -1,3 +1,5 @@
+# Custom Fonts
+
 Another interesting concept to understand when it comes to drawing on the screen is how to draw custom art/fonts. A good example could be that you want to display the time using the whole terminal screen with big numbers.
 
 To do so, you will need to create a bunch of multidimensional arrays that will hole the information how to draw a custom graphic, similarly to the star example from before, but this time we don’t need the size of the screen, since the array will have a fixed size (of course smaller then the overall screen size), for example 5x5 characters.

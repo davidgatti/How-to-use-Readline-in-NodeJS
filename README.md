@@ -37,10 +37,10 @@ With all this sad I now hope you have a nice frame of reference. And if this is 
 
 # Time to code
 
-- [01_the_basic]()
-- [02_draw_in_memory]()
-- [03_edit_the_buffer_and_redraw]()
-- [04_custom_font]()
+- [01_the_basics](https://github.com/davidgatti/How-to-use-Readline-in-NodeJS/tree/master/01_the_basics)
+- [02_draw_in_memory](https://github.com/davidgatti/How-to-use-Readline-in-NodeJS/tree/master/02_draw_in_memory)
+- [03_edit_the_buffer_and_redraw](https://github.com/davidgatti/How-to-use-Readline-in-NodeJS/tree/master/03_edit_the_buffer_and_redraw)
+- [04_custom_fonts](https://github.com/davidgatti/How-to-use-Readline-in-NodeJS/tree/master/04_custom_fonts)
 
 # Efficiency
 

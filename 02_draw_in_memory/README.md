@@ -1,3 +1,5 @@
+# Draw in Memory
+
 This example takes from the first one and add the idea of drawing first in memory, and then take the generated array and then draw the representation on the screen.
 
 Steps

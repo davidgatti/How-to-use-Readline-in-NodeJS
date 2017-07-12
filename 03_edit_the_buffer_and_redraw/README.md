@@ -1,3 +1,5 @@
+# Edit the Buffer and Redraw
+
 In this example we are login to use our star map example from step 2, and modify it to draw 3 different types of starts, from faint to bright, and instead of true/fales we are gouge not use the integer values which represents a specific character in the ASCII code table.
 
 Instead of setting true or false we randomly and an integer between 45 and 47.
