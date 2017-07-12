@@ -6,9 +6,9 @@ One of the things that always fascinated me about the terminal window is drawing
 
 And this are the terminal libraries that me blush ☺️.
 
-⁃ [Blessed](https://www.npmjs.com/package/blessed)
-⁃ [Blessed-contrib](https://github.com/yaronn/blessed-contrib)
-⁃ [Termina-kit](https://www.npmjs.com/package/terminal-kit)
+- [Blessed](https://www.npmjs.com/package/blessed)
+- [Blessed-contrib](https://github.com/yaronn/blessed-contrib)
+- [Termina-kit](https://www.npmjs.com/package/terminal-kit)
 
 High level concept
 
