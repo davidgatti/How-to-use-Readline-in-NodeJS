@@ -1,11 +1,17 @@
 # Edit the Buffer and Redraw
 
-In this example we are login to use our star map example from step 2, and modify it to draw 3 different types of starts, from faint to bright, and instead of true/fales we are gouge not use the integer values which represents a specific character in the ASCII code table.
+The third step will be to take the code from the previous example and modifya it in a way where we save in the array the character that we want to display on the scree. In this the result should be a "star map" 😜. I know nothing serious, but for sure fun.
 
-Instead of setting true or false we randomly and an integer between 45 and 47.
-We then draw the buffer on to the screen by converting the integer in to an ASCII character
-Once the screen is draw we wait one sec.
-We update the values from the array to a new set of random integer from our previous range
-And redraw the screen.
+## Steps that you'll find in the code
 
-We keep repeating this process forever and ever. This example again is vary basic and you could easily update it to make the start change position, by clearing out the array, and random recreating it. etc. the possibilities are headless here, and for sure worth exploring to see what you can come up with.
+- Instead of setting `1` we randomly add an integer between 9617 and 9619.
+- We then draw the buffer on to the screen by converting the integer in to an ASCII character
+- Once the screen is draw we wait one sec.
+- Then we go over the buffer, and look for the places that have a value and randomly chagne/updated them
+- After that we redraw the screen.
+
+By repeatign this process, we in theory have stars on the sky that glitter, but you'll need a very strong immagination to see that 😅.
+
+## Have fun
+
+Go over the code, play with it and modify it :)
