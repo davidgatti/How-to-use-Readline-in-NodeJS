@@ -1,12 +1,16 @@
 # Draw in Memory
 
-This example takes from the first one and add the idea of drawing first in memory, and then take the generated array and then draw the representation on the screen.
+The purpous of this second example is to explain the concpec of the need of generatign an "image" in memory first, befroe we draw it on the sceen. This is a cool thing to understand becasue it is how the big boy do it in a regualr graphical user interface like you macOS, Windows or console. The termianl windos in this case is nicer to work with, since we are dealing with a simpler and smaller framowrk. 
 
-Steps
+## Steps that you'll find in the code
 
-Find the screen size
-Create an array based on the screen size and fill it with “empty” values, in our case all entries will be false.
-Then we take the multidimensional array and randomly set some true values in it.
-Then we use the array content to draw a character where we have a true value.
+- Get the termianl window size
+- Create an array based on the window size and fill it with “empty” values. In our case all entries will be set to `0`.
+- Then we take the multidimensional array and randomly set some `1`.
+- Then we use the array content to draw a character where we have a `1` value.
 
-This we draw the a “buffer” from memory on to the screen. And now that we have the array we can traverse it, and find out if a “pixel” is on or off. If instead of storing true/fales we stored an integer that represents a ASCII character, we could then know even what type of character is being displayed on the screen.
+And this is how you draw on the screen from the "buffer". But insted of dalign with milions of RGB pixels, we are dealing with one ASCII character 😌.
+
+## Have fun
+
+Go over the code, play with it and modify it :)
