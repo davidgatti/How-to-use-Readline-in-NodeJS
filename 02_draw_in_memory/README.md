@@ -1,5 +1,7 @@
 # Draw in Memory
 
+![star_map](https://raw.githubusercontent.com/davidgatti/How-to-use-Readline-in-NodeJS/master/assets/star_map.png)
+
 The purpous of this second example is to explain the concpec of the need of generatign an "image" in memory first, befroe we draw it on the sceen. This is a cool thing to understand becasue it is how the big boy do it in a regualr graphical user interface like you macOS, Windows or console. The termianl windos in this case is nicer to work with, since we are dealing with a simpler and smaller environment. 
 
 ## Steps that you'll find in the code
