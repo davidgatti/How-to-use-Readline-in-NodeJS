@@ -1,5 +1,7 @@
 # Edit the Buffer and Redraw
 
+![star_flicker](https://raw.githubusercontent.com/davidgatti/How-to-use-Readline-in-NodeJS/master/assets/star_flicker.png)
+
 The third step will be to take the code from the previous example and modify it in a way where we save a set of charagets that we want to display in the array. The end result should be a "star map" 😜. I know nothing serious, but for sure fun.
 
 ## Steps that you'll find in the code
