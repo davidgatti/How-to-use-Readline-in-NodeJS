@@ -44,7 +44,13 @@ With all this sad I now hope you have a nice frame of reference. And if this is 
 
 # Efficiency
 
-As you can imagine redrawing the whole screen just to change a bunch of “pixels” is not the most efficient way to go about doing this. A better solution would be to just update the part of the screen that changed. And now we are getting in to the ream of the complicated. That is why the people that made the frameworks and modules mentioned above have Amy gratitude because those modules have implemented all the tricks to draw in the terminal screen that right way, so you don’t have to think about it and can just work on your project.
+As you can imagine redrawing the whole screen just to change a bunch of “pixels” is not the most efficient way to go about doing this. A better solution would be to just update the part of the screen that changed. And now we are getting in to the ream of the complicated. That is why the people that made the frameworks and modules mentioned above have my gratitude because those modules have implemented all the tricks to draw in the terminal screen the right way, so you don’t have to think about it and you can justfocus on your project.
+
+# Readline is not that perfect of a module
+
+A downside worth rememberign when workign with Readline is its buggines. Sadly the module has code that is not doign what its suposute to do. And this is a list of issues that I found while writign this article:
+
+- In each example at the beginning of the file you'll see me replacing the `_insertString` function. To find out more about this bug you cn follow my questiosn on Stackoveflow: [Readline in NodeJS is drawing unwanted lines](https://stackoverflow.com/questions/41314556/readline-in-nodejs-is-drawing-unwanted-lines)
 
 # To sum it up
 
