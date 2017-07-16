@@ -1,5 +1,5 @@
-const crypto = require('crypto');
 const readline = require('readline');
+
 //
 //	Over-right the function to fix a problem within Readline. This should be
 //	here if you want Readline to behave as expected, without this fix strange
