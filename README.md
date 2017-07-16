@@ -1,6 +1,6 @@
 # How to manipulate the terminal window in NodeJS - Readline
 
-# WORK IN PROGRESS
+![star_flicker](https://raw.githubusercontent.com/davidgatti/How-to-use-Readline-in-NodeJS/master/assets/star_flicker.png)
 
 One of the things that always fascinated me about the terminal window is drawing in it with ASCII characters. This article is my way to learn how to do that and in the process share what I learn so we can learn together. I also hope that what I write here will help you appreciate all the wonderful libraries out there that were made by some amazing people, which empower other developers to do some wild things - yes... I'm very excited about the terminal window 😀.
 
