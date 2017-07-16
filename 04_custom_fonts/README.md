@@ -1,5 +1,7 @@
 # Custom Fonts
 
+![custom_font](https://raw.githubusercontent.com/davidgatti/How-to-use-Readline-in-NodeJS/master/assets/custom_font.png)
+
 This last example is focused on showing how to go about drawign a custom font/ASCII image on the screen. Which basically explains in a simple way how fotns, images or anythign that is dsiplayed on a computer screen works. 
 
 In this example you should check the [fonts](https://github.com/davidgatti/How-to-use-Readline-in-NodeJS/tree/master/04_custom_fonts/fonts) folder where I have created a bunch of file representign all the numbers. Each file exports an array which represent how a font should be draw on the screen. 
