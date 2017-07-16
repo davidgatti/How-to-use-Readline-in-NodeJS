@@ -1,5 +1,7 @@
 # The Basics
 
+![wall](https://raw.githubusercontent.com/davidgatti/How-to-use-Readline-in-NodeJS/master/assets/wall.png)
+
 The goal of this first code example is to show in the simplest way possible how to draw on the screen. To run this example just type: 
 
 ```
