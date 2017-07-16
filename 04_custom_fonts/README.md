@@ -1,6 +1,23 @@
 # Custom Fonts
 
-Another interesting concept to understand when it comes to drawing on the screen is how to draw custom art/fonts. A good example could be that you want to display the time using the whole terminal screen with big numbers.
+This last example is focused on showing how to go about drawign a custom font/ASCII image on the screen. Which basically explains in a simple way how fotns, images or anythign is dsiplayed on a computer screen. 
 
-To do so, you will need to create a bunch of multidimensional arrays that will hole the information how to draw a custom graphic, similarly to the star example from before, but this time we don’t need the size of the screen, since the array will have a fixed size (of course smaller then the overall screen size), for example 5x5 characters.
-Once you have all the arrays that represent your custom character you just have to draw them on the screen similarly to the start example. This is how you do this, in a situation like this, in electronics, and this is how fonts and more in a modern operating stymie works, the difference is what the amount of data stored to represent a custom graphic.
+In this example you should check the [fonts](https://github.com/davidgatti/How-to-use-Readline-in-NodeJS/tree/master/04_custom_fonts/fonts) folder where I have created a bunch of file representign all the numbers. Each file exports an array whichi represent how a font should be draw on the screen. 
+
+Right now when you run the code, the only thing that I do is to display one number at the time, one after the other. 
+
+## How would you go about makign a clock?
+
+Let say you wanted to build a clock whchi displayes the time in the middle of the termianl window usign your custom font. You would need to:
+
+- make your own font
+- get the window size
+- take in consideration the size of each font 
+- calculate how to display all the digits in a way that is centered 
+- and last but not last get the time and display it with the font that you created.
+
+As you can see this is where it get more involved, but that how is done on a big system, the diference in this case is that for exmaple macOS has a nice API and fremowrk for developers to help them design a UI 
+
+## Have lots of fun
+
+This is where you can get very creatvie, becasue by changign the content of the `fonts` folder you can have some fun makign a different font that I made and see how it will be displayed on the screen 🙃.
