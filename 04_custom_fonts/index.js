@@ -3,6 +3,7 @@ let readline = require('readline');
 //
 //	Load all the fonts that we have created.
 //
+let dot 	= require('./fonts/dot');
 let zero 	= require('./fonts/zero');
 let one 	= require('./fonts/one');
 let two 	= require('./fonts/two');
@@ -54,8 +55,9 @@ readline.Interface.prototype._insertString = function(c) {
 //
 //	Save all the individual fonts in a array.
 //
-let fonts = [zero, one, two, three, four, five, six, seven, eight, nine];
+let fonts = [dot, zero, one, two, three, four, five, six, seven, eight, nine];
 
+//
 //
 //	Get the terminal window size
 //
@@ -132,7 +134,6 @@ function draw(star_map)
 		//
 		for(let x = 0; x < star_map[y].length; x++)
 		{
-
 			//
 			//	1.	If the value is true, we draw this char on the screen by
 			//		converting the integer in to an ASCII char form the
@@ -140,14 +141,30 @@ function draw(star_map)
 			//
 			if(star_map[y][x])
 			{
+				//
+				//	1.	Move the cursor in the right position where the char
+				//		will be printed.
+				//
+				//		IMPORTANT
+				//
+				//			Move the cursor only when there is something to
+				//			print. Try to move this line outside the if
+				//			statement and check out the difference.
+				//
+				readline.cursorTo(process.stdout, x, y);
+
+				//
+				//	2.	If the value is true, we draw this char on the screen
+				//
 				rl.write('█');
 			}
 
-
 			//
-			//	2.	Move the cursor of the terminal in the next location.
+			//	3.	Move the cursor to the bottom right corner so we can
+			//		admire the printed number on the terminal window with out
+			//		distractions :)
 			//
-			readline.cursorTo(process.stdout, x, y)
+			readline.cursorTo(process.stdout, window_x, window_y)
 		}
 	}
 
@@ -170,7 +187,7 @@ function draw(star_map)
 		//
 		//	3.	Get the next font or if we reach the end, reset the counter
 		//
-		if(font_nr <= 8)
+		if(font_nr <= fonts.length - 2)
 		{
 			font_nr++
 		}

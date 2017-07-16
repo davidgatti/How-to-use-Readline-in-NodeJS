@@ -65,6 +65,11 @@ let rl = readline.createInterface({
 });
 
 //
+//	Fill the first character
+//
+rl.write('█');
+
+//
 //	React to CTR+C so we can close the app, and potentially do something before
 //	closing the app.
 //
@@ -140,19 +145,20 @@ function draw()
 		if(position_x == 0) { dirrection_x = true }
 
 		//
-		//	6.	Write on char on the terminal screen.
-		//
-		rl.write('█');
-
-		//
-		//	7. Move the cursor to the next position
+		//	6.	Move the cursor in the right position where the char will
+		//		be printed.
 		//
 		readline.cursorTo(process.stdout, position_x, position_y)
+
+		//
+		//	7.	Write on char on the terminal screen.
+		//
+		rl.write('█');
 
 		//
 		//	8.	Restart the loop.
 		//
 		draw();
 
-	}, 5)
+	}, 1)
 }

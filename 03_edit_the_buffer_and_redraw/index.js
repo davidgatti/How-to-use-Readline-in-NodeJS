@@ -113,17 +113,6 @@ draw(star_map);
 function make_an_empty_map(window_x, window_y)
 {
 	//
-	//	1.	Fill an array with as many row we have. We need to do this once
-	//		since we assume the window size is fixed.
-	//
-	let row = new Array(window_x);
-
-	//
-	//	2.	We fill the array with 0 as the default value
-	//
-	row.fill(0);
-
-	//
 	//	3.	Create an array that will hold all the rows
 	//
 	let columns = [];
@@ -133,6 +122,20 @@ function make_an_empty_map(window_x, window_y)
 	//
 	for(let i = 0; i < window_y; i++)
 	{
+		//
+		//	1.	Fill an array with as many row we have. We need to do this once
+		//		since we assume the window size is fixed.
+		//
+		let row = new Array(window_x);
+
+		//
+		//	2.	We fill the array with 0 as the default value
+		//
+		row.fill(0);
+
+		//
+		//	3.	Add the empty array
+		//
 		columns.push(row);
 	}
 
@@ -154,42 +157,22 @@ function put_stars_on_the_map(map_buffor)
 	for(let y = 0; y < map_buffor.length; y++)
 	{
 		//
-		//	1.	Loop over the width axis of the array
+		//	1.	Pick a random location in the x axis
 		//
-		for(let x = 0; x < map_buffor[y].length; x++)
-		{
-			//
-			//	1.	Generate a random number
-			//
-			let buf = crypto.randomBytes(1);
+		let x_ran = Math.floor(Math.random() * (window_x + 1));
 
-			//
-			//	2.	By default we aways want to draw a star
-			//
-			let star_type = 0;
+		//
+		//	2.	Returns a random integer between min (inclusive) and
+		//		max (inclusive)
+		//
+		//		In this case we want to print out: ░, ▒ or ▓.
+		//
+		star_type = Math.floor(Math.random() * (9619 - 9617 + 1)) + 9617
 
-			//
-			//	3.	If the value is bellow a specific threshold we delete the
-			//		star. The limit is pretty high because we don't want the
-			//		sky to be full of stars :)
-			//
-			if(buf.readInt8(0) > 120)
-			{
-				//
-				//	1.	Returns a random integer between min (inclusive) and
-				//		max (inclusive)
-				//
-				//		In this case we want to print out: ░, ▒ or ▓.
-				//
-				star_type = Math.floor(Math.random() * (9619 - 9617 + 1)) + 9617;
-			}
-
-			//
-			//	4.	Update the array with a new value
-			//
-			map_buffor[y][x] = star_type;
-
-		}
+		//
+		//	3.	Set a true value in that specific location
+		//
+		map_buffor[y][x_ran] = star_type;
 	}
 
 	//
@@ -220,14 +203,23 @@ function draw(star_map)
 			//
 			if(star_map[y][x])
 			{
+				//
+				//	1.	Move the cursor in the right position where the char
+				//		will be printed.
+				//
+				//		IMPORTANT
+				//
+				//			Move the cursor only when there is something to
+				//			print. Try to move this line outside the if
+				//			statement and check out the difference.
+				//
+				readline.cursorTo(process.stdout, x, y);
+
+				//
+				//	2.	If the value is true, we draw this char on the screen
+				//
 				rl.write(String.fromCharCode(star_map[y][x]));
 			}
-
-			//
-			//	2.	Move the cursor of the terminal in the next location.
-			//
-			readline.cursorTo(process.stdout, x, y)
-
 		}
 
 	}
@@ -292,5 +284,5 @@ function flicker_the_stars(star_map)
 		//
 		draw(star_map);
 
-	}, 2000)
+	}, 1000)
 }
