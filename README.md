@@ -2,39 +2,37 @@
 
 ![star_flicker](https://raw.githubusercontent.com/davidgatti/How-to-use-Readline-in-NodeJS/master/assets/star_flicker.png)
 
-One of the things that always fascinated me about the terminal window is drawing in it with ASCII characters. This article is my way to learn how to do that and in the process share what I learn so we can learn together. I also hope that what I write here will help you appreciate all the wonderful libraries out there that were made by some amazing people, which empower other developers to do some wild things - yes... I'm very excited about the terminal window 😀.
+Drawing on the terminal window using ASCII characters has always fascinated me. In this article, I'll explore the process of learning how to do that. Also, I'll share what I'm learning, so we can learn together as we go. I also hope to help you gain an appreciation for all of the wonderful libraries out there. They were made by some amazing people, and they empower developers to do some wild things.
 
-And this are the terminal libraries that make me blush ☺️.
+Yes, I'm very excited about the terminal window! 😀
+
+And these are the terminal libraries make me blush: ☺️
 
 - [Blessed](https://www.npmjs.com/package/blessed)
 - [Blessed-contrib](https://github.com/yaronn/blessed-contrib)
 - [Termina-kit](https://www.npmjs.com/package/terminal-kit)
 
-# High level concept
+# High-level concept
 
-Before we go in to coding we need to understand the idea of drawing on a terminal window so we can have a frame of reference to understand how to go about it, and then better understand the example code in the repo.
+Before we get into coding, we need to understand the idea of drawing on a terminal window. This will give us a frame of reference to understand how to go about it, and then better understand the example code in the repo.
 
-For starter "[Readline](https://nodejs.org/api/readline.html)" is the name of the NodeJS module that allow you to manipulate the screen, and as you can see, the API is very basic. You might think that it’s because someone doesn’t care about this module, but the reality is that there isn’t much to do in a terminal window.
+For starters, "[Readline](https://nodejs.org/api/readline.html)" is the NodeJS module that allows you to manipulate the screen. As you can see, the API is very basic. You might think that it’s because someone doesn’t care about this module, but the reality is that there isn’t much to do in a terminal window.
 
-You basically can only move the cursor in the X and Y axis, and print a character (or set of characters) from the position of the cursor - thats is it. You can’t even read whats on the screen for example. You have only access to what comes from the user input. But if there is stuff on the screen that you would like to get to, you can’t.
+Basically, you can only move the cursor on the X or Y axis, and you can only print a character (or set of characters) from the position of the cursor. That's it. You can’t even read what's on the screen. You only have access to what comes from the user input. But if there's stuff on the screen that you would like to get to, you can’t.
 
-And this is a important peace of information that nobody talks about or cares to explain. It took me a while to understand how the terminal window works and change the assumption that I had about it. Which was causing me to think about this topic in the wrogn way.
+And this is an important piece of information that nobody talks about or cares to explain (maybe it is obvious, but it wasn't for me in the beginning) . It took me a while to understand how the terminal window works and change my assumptions about it. Those assumptions were causing me to think about this topic in the wrong way.
 
-# One char at the time
+# One char at a time
 
-Another important concept to understand is: drawing on the screen happens one character at the time. Meaning you move the cursor to a position, print out that char, move the cursor to the next position, draw a char, etc.
+Here's another important concept to understand: Drawing on the screen happens one character at a time. Meaning that you move the cursor to a position, print out that char, move the cursor to the next position, draw a char, etc.
 
-**Side Note**
+**Side Note**: This is also how regular screens work, but not limited to camera sensors, LED Matrix, etc. There is no way to instantly show a full image on the screen or take everything in one go (camera sensor). You could with a FPGA, but that's a topic for a different time.
 
-This is also how regualr screens works, but not limited to camera sensors, LED Matrix etc. There is no way to instantly show a full image on the screen or take everything in one go (in the case of a camera sensor). I mean you can with a FPGA, but this is a topic for a different time.
+# How do I know what's on the screen?
 
-# How do I know whats on the screen?
+This works in the same way a computer screen does: it works from what’s in memory, and not how the pixel is set. This means that to display an image on the screen, you need to first draw it in memory. From there, you send the image to the screen. You can’t physically ask the LCD driver to tell you what color pixel 1337x1337 is. An LCD driver is only capable of setting a pixel; it can't read from it. The same goes for the terminal window. You can set a char on the screen, but you can’t ask the terminal about it. The only way to see what's set where is to create an array where you store all the characters that you want to draw on the screen.
 
-Same way you know what’s on a computer screen, from what’s in memory, and not what the pixel is set at. Meaning. To display an image on the screen you need to first draw it in memory, and then from there send the image to the screen. You can’t physically ask the LCD driver, to tell you what color pixel 1337x1337 is - a LCD driver is only capable of setting a pixel and not read from it. Same goes for the terminal window, you can set a char on the screen but you can’t ask the terminal what is set at.
-
-So what you have to do is to have an array, where you store all the characters that you want to draw on the screen, and only then you’ll have a way to find out what is set where.
-
-With all this sad I now hope that now you have a nice frame of reference. And if this is the case, let’s do some coding.
+With all of this said, I hope you now have a nice frame of reference. If so, let’s do some coding.
 
 # Time to code
 
@@ -45,17 +43,17 @@ With all this sad I now hope that now you have a nice frame of reference. And if
 
 # Efficiency
 
-As you can imagine redrawing the whole screen just to change a bunch of “pixels” is not the most efficient way to go about doing this. A better solution would be to just update the part of the screen that changed. And now we are getting in to the ream of the complicated. That is why the people that made the frameworks and modules mentioned above have my gratitude because those modules have implemented all the tricks to draw in the terminal screen the right way, so you don’t have to think about it and you can just focus on your project.
+As you can imagine, redrawing the whole screen just to change a bunch of “pixels” isn't the most efficient way to go about doing this. Simply updating the section of the screen that changed is a much better solution. And now we're getting into the realm of the complicated. The people who made the framework and modules mentioned above have my gratitude, because those modules have implemented all the tricks needed to draw in the terminal screen the right way. You don’t have to think about it, and that allows you to just focus on your project.
 
-# Readline is not that perfect of a module
+# Readline is not a perfect module
 
-A downside worth rememberign when workign with Readline is its buggines. Sadly the module has code that is not doign what its suposute to do. The followign link is an issue that I did run in to [Readline in NodeJS is drawing unwanted lines](https://stackoverflow.com/questions/41314556/readline-in-nodejs-is-drawing-unwanted-lines). This is why each example at the beginning of the file have the `_insertString` function replaced. 
+It's worth remembering that bugginess is a downside of working with Readline. Sadly, the module has code that doesn't do what it's supposed to do. This link will take you to an explanation of one issue that I've run into: R[Readline in NodeJS is drawing unwanted lines](https://stackoverflow.com/questions/41314556/readline-in-nodejs-is-drawing-unwanted-lines). This is why the `_insertString function` is replaced in each example at the beginning of the file.
 
-Definelty something to keep in mind if you'll want to do something more ambitious yourselfe. 
+This is definitely something to keep in mind if you plan to do something more ambitious with Readline.
 
 # To sum it up
 
-I hope you learned something fun in this article, and you’ll have some good times paling with Readline in NodeJS. Especially since you can apply what you learned here with electronics, and turning on or off LED on a LED matrix. The same rules applies, so you can test some ideas in the terminal before you start working on your hardware project. But remember the same way we have cool frameworks in NodeJS, there are equivalent fireworks for Arduino and other similar platforms where eipc developers took a lot of time to make those frameworks flexible and easy to use.
+I hope that you've learned something fun as you've read this article, and that you’ll have fun playing with Readline in NodeJS. You can apply what you've learned here to electronics, and turning LED on or off on a LED matrix. The same rules apply, so you can test ideas in the terminal before you start working on your hardware project for example. But remember: In the same way that NodeJS offers cool frameworks, there are equivalent frameworks for Arduino and other similar platforms. Epic developers put lot of time into making those frameworks flexible and easy to use. But at least know we understand the basic idea behind drawing on the screen.
 
 # The End
 
