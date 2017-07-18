@@ -2,18 +2,18 @@
 
 ![star_flicker](https://raw.githubusercontent.com/davidgatti/How-to-use-Readline-in-NodeJS/master/assets/star_flicker.png)
 
-The third step will be to take the code from the previous example and modify it in a way where we save a set of charagets that we want to display in the array. The end result should be a "star map" 😜. I know nothing serious, but for sure fun.
+The third step is to take the code from the previous example and modify it so we save a set of characters to display in the array. The end result should be a "star map". 😜I know, nothing serious, but fun, for sure.
 
 ## Steps that you'll find in the code
 
-- Instead of setting `1` we randomly add an integer between `9617` and `9619`.
-- We then draw the buffer on to the screen by converting the integer in to an ASCII character
-- Once the screen is draw we wait one sec.
-- Then we go over the buffer, and look for the places that have a value and randomly chagne/updated them
-- After that we redraw the screen.
+- Instead of setting `1`, randomly add an integer between `9617` and `9619`.
+- Draw the buffer on the screen by converting the integer to an ASCII character.
+- Once the screen is drawn, wait one second.
+- Go over the buffer, looking for places that have a value, and randomly change/update them.
+- Redraw the screen.
 
-By repeatign this process, we in theory have stars on the sky that glitter, but you'll need a very strong immagination to see that 😅.
+In theory, this process results in a sky with stars that glitter, but you'll need a very strong imagination to see that 😅.
 
 ## Have fun
 
-Go over the code, play with it and modify it :)
+Go over the code, play with it, and modify it.
