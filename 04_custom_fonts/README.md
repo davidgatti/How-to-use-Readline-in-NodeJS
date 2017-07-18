@@ -20,6 +20,6 @@ Let's say that you want to build a clock that displays the time in your custom f
 
 As you can see, this is where it gets more involved, but that's how it's done on a big system. The difference is that macOS (for example) has a nice API and framework to help developers design and position UI elements. Here you have to do it all by yourself, unless you’ll use a ASCII framework.
 
-## Have lots of fun
+## Have lots of fun!
 
 You can get very creative with this. Changing the contents of the fonts folder allows you to have some fun as you create a unique font based on what I made and display it on the screen. Try for example to make a bigger font and see how it is going to look 🙃.
