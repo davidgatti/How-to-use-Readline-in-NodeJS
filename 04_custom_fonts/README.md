@@ -2,24 +2,24 @@
 
 ![custom_font](https://raw.githubusercontent.com/davidgatti/How-to-use-Readline-in-NodeJS/master/assets/custom_font.png)
 
-This last example is focused on showing how to go about drawign a custom font/ASCII image on the screen. Which basically explains in a simple way how fotns, images or anythign that is dsiplayed on a computer screen works. 
+This last example shows how to go about drawing a custom font/ASCII image on the screen. We'll explain in a simple way how fonts and images work (or anything else that's displayed on a computer screen).
 
-In this example you should check the [fonts](https://github.com/davidgatti/How-to-use-Readline-in-NodeJS/tree/master/04_custom_fonts/fonts) folder where I have created a bunch of file representign all the numbers. Each file exports an array which represent how a font should be draw on the screen. 
+Check the [fonts](https://github.com/davidgatti/How-to-use-Readline-in-NodeJS/tree/master/04_custom_fonts/fonts) folder, in which I've created a bunch of files that represent all of the numbers. Each file exports an array that represents how a font should be drawn on the screen.
 
-Right now when you run the code, the only thing that I do is to display one number at the time, one after the other. 
+Right now, when I run the code, the only thing I need to do is to display one number at a time, one after the other.
 
-## How would you go about makign a clock?
+## How would you go about making a clock?
 
-Let say you wanted to build a clock which displays the time in the middle of the termianl window usign your custom font. You would need to:
+Let's say that you want to build a clock that displays the time in your custom font in the center of the terminal window. Here's what you'd need to do:
 
-- make your own font
-- get the window size
-- take in consideration the size of each font 
-- calculate how to display all the digits in a way that is centered 
-- and last but not last get the time and display it with the font that you created.
+- Make your own font.
+- Get the window size.
+- Take the size of each font into consideration.
+- Calculate how to center all of the digits.
+- Display the time using your font.
 
-As you can see this is where it gets more involved, but that how is done on a big system, the diference in this case is that for exmaple macOS has a nice API and fremowrk for developers to help them design and posstion UI elements.
+As you can see, this is where it gets more involved, but that's how it's done on a big system. The difference is that macOS (for example) has a nice API and framework to help developers design and position UI elements. Here you have to do it all by yourself, unless you’ll use a ASCII framework.
 
 ## Have lots of fun
 
-This is where you can get very creatvie, becasue by changign the content of the `fonts` folder you can have some fun makign a different font based on what I made and see how it will be displayed on the screen 🙃.
+You can get very creative with this. Changing the contents of the fonts folder allows you to have some fun as you create a unique font based on what I made and display it on the screen. Try for example to make a bigger font and see how it is going to look 🙃.
