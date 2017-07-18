@@ -47,7 +47,7 @@ As you can imagine, redrawing the whole screen just to change a bunch of “pixe
 
 # Readline is not a perfect module
 
-It's worth remembering that bugginess is a downside of working with Readline. Sadly, the module has code that doesn't do what it's supposed to do. This link will take you to an explanation of one issue that I've run into: R[Readline in NodeJS is drawing unwanted lines](https://stackoverflow.com/questions/41314556/readline-in-nodejs-is-drawing-unwanted-lines). This is why the `_insertString function` is replaced in each example at the beginning of the file.
+It's worth remembering that bugginess is a downside of working with Readline. Sadly, the module has code that doesn't do what it's supposed to do. This link will take you to an explanation of one issue that I've run into: [Readline in NodeJS is drawing unwanted lines](https://stackoverflow.com/questions/41314556/readline-in-nodejs-is-drawing-unwanted-lines). This is why the `_insertString function` is replaced in each example at the beginning of the file.
 
 This is definitely something to keep in mind if you plan to do something more ambitious with Readline.
 
